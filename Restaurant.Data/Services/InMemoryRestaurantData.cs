@@ -25,5 +25,10 @@ namespace RestaurantChain.Data.Services
       {
          return restaurants.OrderBy(r => r.Name);
       }
+
+      public Restaurant GetRestaurantForId(int id)
+      {
+         return restaurants.FirstOrDefault(r => r.Id.Equals(id));
+      }
    }
 }
