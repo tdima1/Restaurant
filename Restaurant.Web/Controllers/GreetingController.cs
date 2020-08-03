@@ -11,10 +11,12 @@ namespace RestaurantChain.Web.Controllers
    public class GreetingController : Controller
    {
       // GET: Greeting
-      public ActionResult Index()
+      public ActionResult Index(string name)
       {
-         var model = new GreetingViewModel();
+         var model = new GreetingModel();
+
          model.Message = ConfigurationManager.AppSettings["message"];
+         model.Name = name ?? "no name";
          return View(model);
       }
    }

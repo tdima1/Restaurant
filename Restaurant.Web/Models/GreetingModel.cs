@@ -5,8 +5,9 @@ using System.Web;
 
 namespace RestaurantChain.Web.Models
 {
-   public class GreetingViewModel
+   public class GreetingModel
    {
       public string Message { get; set; }
+      public string Name { get; set; }
    }
 }
