@@ -1,4 +1,5 @@
-﻿using RestaurantChain.Data.Services;
+using RestaurantChain.Data.Models;
+using RestaurantChain.Data.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,6 +31,20 @@ namespace RestaurantChain.Web.Controllers
             return View("NotFound");
          }
          return View(model);
+      }
+      
+      [HttpGet]
+      public ActionResult Create()
+      {
+         return View();
+      }
+
+      [HttpPost]
+      [ValidateAntiForgeryToken]
+      public ActionResult Create(Restaurant restaurant)
+      {
+         db.AddRestaurant(restaurant);
+         return View();
       }
    }
 }
