@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Restaurant.Data.Models
+namespace RestaurantChain.Data.Models
 {
    public class Restaurant
    {
