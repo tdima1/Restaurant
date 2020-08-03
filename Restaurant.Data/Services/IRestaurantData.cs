@@ -12,5 +12,7 @@ namespace RestaurantChain.Data.Services
       IEnumerable<Restaurant> GetAllRestaurants();
       Restaurant GetRestaurantForId(int id);
 
+      void AddRestaurant(Restaurant restaurant);
+
    }
 }

@@ -21,6 +21,12 @@ namespace RestaurantChain.Data.Services
          };
       }
 
+      public void AddRestaurant(Restaurant restaurant)
+      {
+         restaurant.Id = restaurants.Max(r => r.Id) + 1;
+         restaurants.Add(restaurant);
+      }
+
       public IEnumerable<Restaurant> GetAllRestaurants()
       {
          return restaurants.OrderBy(r => r.Name);
