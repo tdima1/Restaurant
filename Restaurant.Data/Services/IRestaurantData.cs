@@ -10,5 +10,6 @@ namespace RestaurantChain.Data.Services
    public interface IRestaurantData
    {
       IEnumerable<Restaurant> GetAllRestaurants();
+
    }
 }
