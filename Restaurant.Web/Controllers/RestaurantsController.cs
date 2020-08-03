@@ -1,4 +1,4 @@
-﻿using RestaurantChain.Data.Models;
+using RestaurantChain.Data.Models;
 using RestaurantChain.Data.Services;
 using System;
 using System.Collections.Generic;
@@ -32,7 +32,7 @@ namespace RestaurantChain.Web.Controllers
          }
          return View(model);
       }
-
+      
       [HttpGet]
       public ActionResult Create()
       {

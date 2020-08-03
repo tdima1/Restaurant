@@ -13,6 +13,5 @@ namespace RestaurantChain.Data.Services
       Restaurant GetRestaurantForId(int id);
 
       void AddRestaurant(Restaurant restaurant);
-
    }
 }
