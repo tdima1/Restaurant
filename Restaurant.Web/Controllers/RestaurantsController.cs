@@ -43,8 +43,32 @@ namespace RestaurantChain.Web.Controllers
       [ValidateAntiForgeryToken]
       public ActionResult Create(Restaurant restaurant)
       {
-         db.AddRestaurant(restaurant);
+         if(ModelState.IsValid) {
+            db.AddRestaurant(restaurant);
+            return RedirectToAction("Details", new { id = restaurant.Id });
+         }
          return View();
+      }
+
+      [HttpGet]
+      public ActionResult Edit(int id)
+      {
+         var model = db.GetRestaurantForId(id);
+         if (model != null) {
+            return View(model);
+         }
+         return HttpNotFound();
+      }
+
+      [HttpPost]
+      [ValidateAntiForgeryToken]
+      public ActionResult Edit(Restaurant restaurant)
+      {
+         if(ModelState.IsValid) {
+            db.EditRestaurant(restaurant);
+            return RedirectToAction("Details", new { id = restaurant.Id });
+         }
+         return View(restaurant);
       }
    }
 }

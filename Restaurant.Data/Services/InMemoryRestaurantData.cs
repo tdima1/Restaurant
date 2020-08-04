@@ -27,6 +27,15 @@ namespace RestaurantChain.Data.Services
          restaurants.Add(restaurant);
       }
 
+      public void EditRestaurant(Restaurant newRestaurant)
+      {
+         var found = GetRestaurantForId(newRestaurant.Id);
+         if(found != null) {
+            found.Name = newRestaurant.Name;
+            found.Cuisine = newRestaurant.Cuisine;
+         }
+      }
+
       public IEnumerable<Restaurant> GetAllRestaurants()
       {
          return restaurants.OrderBy(r => r.Name);
