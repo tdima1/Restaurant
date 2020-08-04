@@ -27,6 +27,14 @@ namespace RestaurantChain.Data.Services
          restaurants.Add(restaurant);
       }
 
+      public void Delete(int id)
+      {
+         var restaurant = GetRestaurantForId(id);
+         if (restaurant != null) {
+            restaurants.Remove(restaurant);
+         }
+      }
+
       public void EditRestaurant(Restaurant newRestaurant)
       {
          var found = GetRestaurantForId(newRestaurant.Id);

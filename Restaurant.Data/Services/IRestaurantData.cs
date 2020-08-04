@@ -15,5 +15,6 @@ namespace RestaurantChain.Data.Services
       void AddRestaurant(Restaurant restaurant);
 
       void EditRestaurant(Restaurant newRestaurant);
+      void Delete(int id);
    }
 }

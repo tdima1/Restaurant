@@ -23,6 +23,13 @@ namespace RestaurantChain.Data.Services
          db.SaveChanges();
       }
 
+      public void Delete(int id)
+      {
+         var restaurant = db.Restaurants.Find(id);
+         db.Restaurants.Remove(restaurant);
+         db.SaveChanges();
+      }
+
       public void EditRestaurant(Restaurant newRestaurant)
       {
          var entry = db.Entry(newRestaurant);

@@ -70,5 +70,23 @@ namespace RestaurantChain.Web.Controllers
          }
          return View(restaurant);
       }
+
+      [HttpGet]
+      public ActionResult Delete(int id)
+      {
+         var model = db.GetRestaurantForId(id);
+         if (model != null) {
+            return View(model);
+         }
+         return HttpNotFound();
+      }
+
+      [HttpPost]
+      [ValidateAntiForgeryToken]
+      public ActionResult Delete(int id, FormCollection collection)
+      {
+         db.Delete(id);
+         return RedirectToAction("Index");
+      }
    }
 }
